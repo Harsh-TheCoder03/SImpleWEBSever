@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Device Specifications</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #1e2327;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #2a2f36;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #61dafb;
+            font-size: 1.6rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        td {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #3a3f47;
+            font-size: 0.95rem;
+        }
+
+        td:first-child {
+            color: #9aa0a6;
+            width: 45%;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #6b7076;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Device Specifications</h1>
+        <table id="specs-table">
+            <tr>
+                <td>Reference no</td>
+                <td id="referenceNo">26009045</td>
+            </tr>
+            <tr>
+                <td>Platform</td>
+                <td id="platform">-</td>
+            </tr>
+            <tr>
+                <td>CPU Cores (logical)</td>
+                <td id="cores">-</td>
+            </tr>
+            <tr>
+                <td>Approx. Device Memory</td>
+                <td id="memory">-</td>
+            </tr>
+            <tr>
+                <td>Screen Resolution</td>
+                <td id="screen">1920x1080</td>
+            </tr>
+            <tr>
+                <td>Color Depth</td>
+                <td id="colorDepth">-</td>
+            </tr>
+            <tr>
+                <td>Device Storage</td>
+                <td id="storage">512 GB</td>
+            </tr>
+        </table>
+        <footer>Served locally via a Python HTTP server</footer>
+    </div>
+
+    <script>
+        document.getElementById('platform').textContent = navigator.platform || 'Unknown';
+        document.getElementById('cores').textContent = navigator.hardwareConcurrency || 'Unavailable';
+        document.getElementById('memory').textContent =
+            navigator.deviceMemory ? navigator.deviceMemory + ' GB (approx.)' : 'Unavailable';
+        document.getElementById('colorDepth').textContent = screen.colorDepth + '-bit';
+    </script>
+</body>
+
+</html>
